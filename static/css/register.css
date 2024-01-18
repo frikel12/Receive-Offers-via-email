@@ -1,0 +1,14 @@
+.registerform{
+    margin: 0px auto;
+    width: 40%;
+
+}
+
+.form-control {
+  margin:-10px 0; // form top and bottom margin
+ }
+
+
+button{
+    width: 100%
+}

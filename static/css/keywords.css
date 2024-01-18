@@ -1,0 +1,12 @@
+.contain {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "keywords receive-email";
+}
+
+.keywords { grid-area: keywords; }
+
+.receive-email { grid-area: receive-email; }

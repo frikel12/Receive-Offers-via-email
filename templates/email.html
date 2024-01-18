@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Email</title>
+    </head>
+    <body>
+    <div style="background:#f3f2f1;padding:10px 20px;margin-left: auto;margin-right: auto;width:70%;">
+        <table width="100%">
+            <tr style="text-align:center;">
+                <h1 style="color: #2d2d2d;font-size: 28px;font-weight: bold;line-height: 36px;Margin: 0;">Nouveaux Emplois</h1>
+            </tr>
+            <tr><td><hr></td></tr>
+
+            {% for elem in data %}
+            <tr><td>
+                <a href="#" style="font-size:18px;color:black;">{{ elem.title }}</a>
+                <p style="margin-top:0px;"><b>{{elem.company_name}}</b>- {{elem.company_location}}</p>
+            </td></tr>
+            {% endfor %}
+        </table>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+body{
+    width: 80%;
+    margin : 0px auto;
+    padding: 0px;
+    background-image: url('../images/back2.jpg');
+
+}
+* {
+    color: #E9ECEF;
+}
+.container{ 
+    background-color:white;
+    background-image: url('backg.jpg');
+    border: 1px 0px solid black;
+    width: 100%; 
+    box-shadow: 0px 0px 2px black;
+    height: 100vh;
+    padding: 10px 0px;
+    background-color : #47494B;
+
+}
+
+table{
+    margin-top:20px
+}
+
+img{
+    width: 60px;
+}
+
+.welcome{
+    margin: 30px auto;
+}
+
+.connectbtn{
+    color: white;
+}
+

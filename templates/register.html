@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+
+{% endblock %}
+
+
+{% block body %}
+<div class="registerform ">
+    <h1 style="text-align:center;margin-bottom:20px;">Register</h1>
+    {% if msg == "INSCRIPTION REUSSI": %}
+        <p style="color:green">{{ msg }}</p>
+    {% else %}
+        <p style="color:red">{{ msg }}</p>
+    {% endif %}
+    <form method="post" action="{{ url_for('register') }}">
+        <!-- Nom input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">Nom</label>
+            <input type="text" class="form-control" name="nom"/>
+          </div>
+          <!-- Prenom input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">Prenom</label>
+            <input type="text" class="form-control" name="prenom"/>
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">Adresse mail</label>
+            <input type="text" id="form2Example1" class="form-control" name="email" />
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" >Mot de pass</label>
+            <input type="password" class="form-control" name="password"/>
+          </div>
+
+        <!-- Confirm Password input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" >Confirmer mot de pass</label>
+            <input type="password" class="form-control" name="confirmpass"/>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="submitbtn btn btn-block mb-4" style="background-color:#CAC7C7;">Créer un compte</button>
+
+          <!-- Register buttons -->
+          <div class="text-center">
+            <p>Vous avez un compte? <a href="{{ url_for('login') }}" style="color: #658FBC;">Se connecter</a></p>
+
+          </div>
+    </form>
+</div>
+
+{% endblock %}
+
+

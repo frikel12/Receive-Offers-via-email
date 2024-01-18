@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/keywords.css') }}">
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="contain">
+  <div class="keywords">
+    <div class="w-50 ms-4 mt-3 keywords">
+  <form method="post" action="{{ url_for('addkeyword') }}">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Add your keyword</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="keyword">
+    </div>
+    <button type="submit" class="btn" style="background-color:#CAC7C7;">Add</button>
+  </form>
+</div>
+
+<div class="w-100 ms-4">
+  <table class="table w-75">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">keyword</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for keyword in data %}
+    <tr>
+      <th scope="row">{{ keyword.id }}</th>
+      <td>{{ keyword.name }}</td>
+      <td><a href="{{ url_for('deletekeyword', id=keyword.id) }}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+</div>
+  </div>
+
+  <div class="receive-email ps-3 pt-5">
+    <div class="form-check form-switch">
+      <form method="post" action="{{ url_for('receivemail') }}">
+        {% if msg.receive_email == 0 %}
+          {% set checked="" %}
+        {% else %}
+          {% set checked="checked" %}
+        {% endif %}
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" {{ checked }} name="receivemail" onchange="this.form.submit()">
+        <label class="form-check-label" for="flexSwitchCheckChecked"><b>Receive email offer</b></label>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
